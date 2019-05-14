@@ -1,42 +1,13 @@
 // functions1.rs
 // Make me compile! Scroll down for hints :)
 
+fn call_me() {
+    println!("called you");
+}
+
 fn main() {
     call_me();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // This main function is calling a function that it expects to exist, but the
 // function doesn't exist. It expects this function to have the name `call_me`.

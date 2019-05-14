@@ -6,8 +6,9 @@ fn main() {
     println!("My current favorite color is {}", answer);
 }
 
+// https://news.ycombinator.com/item?id=16546562
 fn current_favorite_color() -> String {
-    "blue"
+    String::from("blue")
 }
 
 

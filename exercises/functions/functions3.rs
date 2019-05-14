@@ -2,7 +2,7 @@
 // Make me compile! Scroll down for hints :)
 
 fn main() {
-    call_me();
+    call_me(7);
 }
 
 fn call_me(num: i32) {
