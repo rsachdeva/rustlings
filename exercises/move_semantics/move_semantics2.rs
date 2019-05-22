@@ -1,28 +1,54 @@
 // move_semantics2.rs
 // Make me compile without changing line 10! Scroll down for hints :)
-
+// 1. Make another, separate version of the data that's in `vec0` and pass that
+// to `fill_vec` instead.
+// solution1.
+// in main
+// let mut vec1 = fill_vec(vec0.clone());
+// outout here
+// vec0 has length 0 content `[]`
+//vec1 has length 4 content `[22, 44, 66, 88]`
+// 2. Make `fill_vec` borrow its argument instead of taking ownership of it,
+// and then copy the data within the function in order to return an owned
+// `Vec<i32>`
+// solution2.
+//in main
+//    let mut vec1 = fill_vec(&vec0);
+// in fell_vec
+//    let mut vec = vec.clone();
+// reference is immutable ut want to mutate in fill_vec
+// output here
+// vec0 has length 0 content `[]`
+//vec1 has length 4 content `[22, 44, 66, 88]`
+// 3. Make `fill_vec` *mutably* borrow its argument (which will need to be
+// mutable), modify it directly, then not return anything. Then you can get rid
+// of `vec1` entirely -- note that this will change what gets printed by the
+// first `println!`
+//soliution3 - below
+//output
+// vec0 has length 3 content `[22, 44, 66]`
+//vec1 has length 4 content `[22, 44, 66, 88]`
+// also adds solution 4 with a new vector incase desired
 fn main() {
-    let vec0 = Vec::new();
+    let mut vec0 = Vec::new();
 
-    let mut vec1 = fill_vec(vec0);
+    let mut vec9 = fill_vec(&mut vec0);
 
     // Do not change the following line!
     println!("{} has length {} content `{:?}`", "vec0", vec0.len(), vec0);
 
-    vec1.push(88);
+    vec0.push(88);
+    vec9.push(99);
 
-    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
-
+    println!("{} has length {} content `{:?}`", "vec1", vec0.len(), vec0);
+    println!("{} has length {} content `{:?}`", "vec1", vec9.len(), vec9);
 }
 
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let mut vec = vec;
-
+fn fill_vec(vec: &mut Vec<i32>) -> Vec<i32> {
     vec.push(22);
     vec.push(44);
     vec.push(66);
-
-    vec
+    vec.to_vec()
 }
 
 

@@ -10,3 +10,12 @@ fn main() {
         panic!("Oh no! Wrong output!");
     }
 }
+
+mod macros {
+    #[macro_export]
+    macro_rules! my_macro {
+        ($val:expr) => {
+            format!("Hello {}", $val)
+        };
+    }
+}

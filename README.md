@@ -47,3 +47,26 @@ rustlings verify
 ✅ Successfully compiled exercises/strings/strings2.rs!
 
 ✅ Successfully compiled exercises/test3.rs!
+
+✅ Successfully compiled exercises/modules/modules1.rs!
+
+✅ Successfully compiled exercises/modules/modules2.rs!
+
+✅ Successfully compiled exercises/macros/macros1.rs!
+
+✅ Successfully compiled exercises/macros/macros2.rs!
+
+✅ Successfully compiled exercises/macros/macros3.rs!
+
+✅ Successfully compiled exercises/macros/macros4.rs!
+
+✅ Successfully compiled exercises/test4.rs!
+
+✅ Successfully compiled exercises/move_semantics/move_semantics1.rs!
+
+✅ Successfully compiled exercises/move_semantics/move_semantics2.rs!
+
+✅ Successfully compiled exercises/move_semantics/move_semantics3.rs!
+
+✅ Successfully compiled exercises/move_semantics/move_semantics4.rs!
+
