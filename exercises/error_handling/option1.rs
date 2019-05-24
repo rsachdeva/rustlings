@@ -10,8 +10,11 @@ fn main() {
     let last = list.pop().unwrap();
     println!("The last item in the list is {:?}", last);
 
-    let second_to_last = list.pop().unwrap();
-    println!("The second-to-last item in the list is {:?}", second_to_last);
+    let second_to_last = list.pop();
+    match dbg!(second_to_last) {
+        Some(_) => println!("The second-to-last item in the list is {:?}", second_to_last),
+        None => println!("Its empty!"),
+    }
 }
 
 

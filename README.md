@@ -70,3 +70,15 @@ rustlings verify
 
 ✅ Successfully compiled exercises/move_semantics/move_semantics4.rs!
 
+✅ Successfully tested exercises/error_handling/errors1.rs!
+
+✅ Successfully tested exercises/error_handling/errors2.rs!
+
+✅ Successfully tested exercises/error_handling/errors3.rs!
+
+✅ Successfully tested exercises/error_handling/errorsn.rs!
+
+✅ Successfully compiled exercises/error_handling/option1.rs!
+
+✅ Successfully tested exercises/error_handling/result1.rs!
+

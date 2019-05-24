@@ -1,10 +1,10 @@
 // result1.rs
 // Make this test pass! Scroll down for hints :)
 
-#[derive(PartialEq,Debug)]
+#[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
 
-#[derive(PartialEq,Debug)]
+#[derive(PartialEq, Debug)]
 enum CreationError {
     Negative,
     Zero,
@@ -12,31 +12,30 @@ enum CreationError {
 
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
-        Ok(PositiveNonzeroInteger(value as u64))
+        //        if value > 0 {
+        //            Ok(PositiveNonzeroInteger(value as u64))
+        //        } else if value == 0 {
+        //            Err(CreationError::Zero)
+        //        } else {
+        //            Err(CreationError::Negative)
+        //        }
+        match value {
+            value if value > 0 => Ok(PositiveNonzeroInteger(value as u64)),
+            value if value == 0 => Err(CreationError::Zero),
+            _ => Err(CreationError::Negative),
+        }
     }
 }
 
 #[test]
 fn test_creation() {
     assert!(PositiveNonzeroInteger::new(10).is_ok());
-    assert_eq!(Err(CreationError::Negative), PositiveNonzeroInteger::new(-10));
+    assert_eq!(
+        Err(CreationError::Negative),
+        PositiveNonzeroInteger::new(-10)
+    );
     assert_eq!(Err(CreationError::Zero), PositiveNonzeroInteger::new(0));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // `PositiveNonzeroInteger::new` is always creating a new instance and returning an `Ok` result.
 // It should be doing some checking, returning an `Err` result if those checks fail, and only
