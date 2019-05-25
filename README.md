@@ -1,3 +1,11 @@
+**rustlings version**
+
+rustlings -V
+
+rustlings 1.2.2
+
+**exercises solved**
+
 rustlings verify
 
 ✅ Successfully compiled exercises/variables/variables1.rs!
@@ -81,4 +89,6 @@ rustlings verify
 ✅ Successfully compiled exercises/error_handling/option1.rs!
 
 ✅ Successfully tested exercises/error_handling/result1.rs!
+
+✅ Successfully compiled exercises/threads/threads1.rs!
 
