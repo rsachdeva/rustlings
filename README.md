@@ -92,3 +92,11 @@ rustlings verify
 
 ✅ Successfully compiled exercises/threads/threads1.rs!
 
+✅ Successfully compiled exercises/standard_library_types/arc1.rs!
+
+✅ Successfully tested exercises/standard_library_types/iterator3.rs!
+
+✅ Successfully tested exercises/standard_library_types/iterators4.rs!
+
+Solved All exercises in rustlings version 1.2.2!
+

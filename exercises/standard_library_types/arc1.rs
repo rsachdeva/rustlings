@@ -4,19 +4,24 @@
 // somewhere. Try not to create any copies of the `numbers` Vec!
 // Scroll down for hints :)
 
-use std::sync::Arc;
+use std::sync::{Mutex, Arc};
 use std::thread;
 
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
-    let shared_numbers = // TODO
+//    println!("numbers is {:?}", numbers);
+//    let numbers_iter = numbers.iter();
+//    println!("numbers sum is {:?}", numbers_iter.sum::<u32>());
+    let shared_numbers = Arc::new(Mutex::new(numbers));
     let mut joinhandles = Vec::new();
 
     for offset in 0..8 {
+        let shared_numbers = Arc::clone(&shared_numbers);
         joinhandles.push(
         thread::spawn(move || {
             let mut i = offset;
             let mut sum = 0;
+            let child_numbers = shared_numbers.lock().unwrap();
             while i < child_numbers.len() {
                 sum += child_numbers[i];
                 i += 5;
@@ -24,6 +29,8 @@ fn main() {
             println!("Sum of offset {} is {}", offset, sum);
         }));
     }
+    let total_threads = joinhandles.len();
+    println!("total theads are same as number of offset which is staring point incremented by 5 each time used for summation {:?}", total_threads);
     for handle in joinhandles.into_iter() {
         handle.join().unwrap();
     }

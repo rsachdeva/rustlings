@@ -10,6 +10,10 @@ pub fn factorial(num: u64) -> u64 {
     // For the most fun don't use:
     // - recursion
     // Scroll down for hints.
+    let numbers = 1..num+1;
+    // https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold
+    let factorial = numbers.into_iter().fold(1, |acc, x| acc * x);
+    factorial
 }
 
 #[cfg(test)]
